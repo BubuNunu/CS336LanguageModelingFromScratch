@@ -32,7 +32,7 @@ With experience in Python, RNNs, NLP, and Transformers, I’m following this Sta
 - **BPE (Byte Pair Encoding)**:  
   - A subword-level method that balances vocabulary size and sequence length
 
-##  Second Class: Pytorch and jjjResource Accounting
+##  Second Class: Pytorch and Resource Accounting
 Tensor: basic block of storing everything, such as parameter, gradienets, activations, optimizer states
 
 ### Memory(GB) accounting
@@ -57,7 +57,28 @@ Bu default, tensors are stored in CPU memory
   - Two confusing acronyms
     - FLOPs: floating-point operations
     - FLOP/s or FLOPS: floating-point operations per second, which is used to measure the speed hardware.
+  - Model FlOPs utilization (MFU)
+    - Definition: (actual FLOP/s) / (promised FLOP/s) [ignore communication/overhead]
+    - mfu = actual_flop_per_sec / promised_flop_per_sec
+    - Usually, MFU of >= 0.5 is quite good (and will be higher if matmuls dominate)
+    FLOP/s depends on hardware(H100 >> A100) and the datatype(bfloat16 >> float32)
+- **Gradients basics**:
+  - Basic ML knowledge to understand:
+    - The heart of training a neural network:
+      - forward pass (forward propagation): feed input data through the neural network to produce an output. 
+      - backward pass (backpropagation): 
+        - After forward pass and the calculation of the loss, the backward pass begins. The process moves in the reverse direction, from the output layer back to the input layer.
+        - Goal: calculate the gradient of the loss function with respect to each of the network's parameters (weights and biases).
+        - Backward gradient: 
+        
   - 
+
+
+
+
+
+
+
     
 
  
