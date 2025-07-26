@@ -36,7 +36,10 @@ With experience in Python, RNNs, NLP, and Transformers, I’m following this Sta
 Tensor: basic block of storing everything, such as parameter, gradienets, activations, optimizer states
 
 ### Memory(GB) accounting
-
+- float32 (default): it takes a lot of memeory
+- float16: will overflow for large value or underflow for small value
+- bfloat16: same memory as float 16 but has same dynamic range as float32!
+- fb8: 
 ### Compute (FLOPS) accounting
 Bu default, tensors are stored in CPU memory
 
